@@ -4,7 +4,7 @@
   "description": "Node, express, mongodb backend for the dccMern class youtube clone project",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/giuseppe-g-gelardi/youtube_clone_api#readme",
   "dependencies": {
-    "mongoose": "^6.0.13"
+    "config": "^3.3.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "nodemon": "^2.0.15"
   }
 }
