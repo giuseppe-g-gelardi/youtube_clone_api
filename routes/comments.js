@@ -1,2 +1,2 @@
-const { Comment, Reply, validateComment, validateReply } = require('../models/comments')
+const { Comment, validateComment } = require('../models/comments')
 
