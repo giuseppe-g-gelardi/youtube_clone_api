@@ -1,0 +1,20 @@
+{
+  "name": "youtube_clone_api",
+  "version": "1.0.0",
+  "description": "Node, express, mongodb backend for the dccMern class youtube clone project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giuseppe-g-gelardi/youtube_clone_api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giuseppe-g-gelardi/youtube_clone_api/issues"
+  },
+  "homepage": "https://github.com/giuseppe-g-gelardi/youtube_clone_api#readme"
+}
