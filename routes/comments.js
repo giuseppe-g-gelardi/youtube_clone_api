@@ -52,4 +52,19 @@ router.post('/', async (req, res) => {
   }
 })
 
+// delete comment
+router.delete('/:id', async (req, res) => {
+  try {
+    const comment = await Comment.findByIdAndDelete(req.params.id)
+
+    if (!comment) return res.status(400).send(`
+      The comment with id: "${req.params.id}" does not exist.
+    `)
+
+    return res.send(comment)
+  } catch (err) {
+    return res.status(500).send(`Internal Server Error ${err}`)
+  }
+})
+
 module.exports = router
