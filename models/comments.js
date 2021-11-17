@@ -37,3 +37,5 @@ module.exports.Comment = Comment
 module.exports.Reply = Reply
 module.exports.commentSchema = commentSchema
 module.exports.replySchema = replySchema
+module.exports.validateComment = validateComment
+module.exports.validateReply = validateReply
