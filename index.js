@@ -2,13 +2,15 @@ const express = require('express')
 const cors = require('cors')
 const connectDB = require('./connect/mongoConnect')
 
+const comments = require('./routes/comments')
+
 const app = express()
 
 connectDB()
 
 app.use(cors())
 app.use(express.json())
-// app.use('/api/comments')
+app.use('/api/comments', comments)
 
 const port = process.env.PORT || 5000
 
