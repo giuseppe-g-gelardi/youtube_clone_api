@@ -4,7 +4,7 @@
 // const express = require('express')
 // const router = express.Router()
 
-// router.post('./', async (req, res) => {
+// router.post('./:commentId/replies/:replyId', async (req, res) => {
 //   try {
 //     const reply = await Reply.findById(req.params.replyId)
 //     if (!reply) return res.status(400).send(`
@@ -16,6 +16,6 @@
 //       The comment with id: "${req.params.commentId}" does not exist.
 //     `)
 
-//     reply.Comments
+//     comment.reply.push(reply)
 //   }
 // })

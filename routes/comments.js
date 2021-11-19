@@ -98,4 +98,19 @@ router.put('/:id', async (req, res) => {
 })
 // the commented out code cause 'ERR_HTTP_HEADERS_SENT' error
 
+
+
+
+
+
+// TODO replies start here
+
+// R
+
+// * c /commentId/replies
+// ! R /commentId/replies
+// ? u /commentId/replies/replyId
+// * d /commentId/replies/replyId
+
+
 module.exports = router
