@@ -4,7 +4,11 @@
   "description": "Node, express, mongodb backend for the dccMern class youtube clone project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "server": "nodemon",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,7 @@
   },
   "homepage": "https://github.com/giuseppe-g-gelardi/youtube_clone_api#readme",
   "dependencies": {
+    "concurrently": "^6.4.0",
     "config": "^3.3.6",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
