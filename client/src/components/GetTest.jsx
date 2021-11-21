@@ -16,8 +16,13 @@ export default function GetTest() {
     getComments()
   }, [])
 
+  const logDataButton = () => {
+    console.log(comments)
+  }
+
   return (
     <div>
+      <button onClick={() => logDataButton()}>bottunnn</button>
       <ol>
     {comments.map((comment) => <li key={comment}>{comment.text}</li>)}
       </ol>

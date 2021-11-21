@@ -15,9 +15,10 @@ const Comment = mongoose.model('Comment', commentSchema)
 const validateComment = (comment) => {
   const schema = Joi.object({
     videoID: Joi.string().required(),
-    text: Joi.string().min(4).max(255).required(),
+    text: Joi.string().min(1).max(255).required(),
     likes: Joi.number().default(0),
     dislikes: Joi.number().default(0),
+    replies: Joi.array(),
   })
   return schema.validate(comment)
 }
