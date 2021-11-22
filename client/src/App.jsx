@@ -1,11 +1,12 @@
 import React from 'react'
 import GetTest from './components/GetTest'
+import NewComment from './components/NewComment'
 
 export default function App() {
   return (
     <div>
-      <h1>app</h1>
       <GetTest />
+      <NewComment />
     </div>
   )
 }

@@ -24,7 +24,7 @@ export default function GetTest() {
     <div>
       <button onClick={() => logDataButton()}>bottunnn</button>
       <ol>
-    {comments.map((comment) => <li key={comment}>{comment.text}</li>)}
+        {comments.map((comment) => <li key={comment}>{comment.text}</li>)}
       </ol>
     </div>
   )
