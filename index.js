@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const connectDB = require('./connect/mongoConnect')
 
-const comments = require('./routes/comments')
+const comments = require('./routes/comment')
 
 const app = express()
 
