@@ -25,7 +25,23 @@ export default function GetTest() {
     <div>
       <button onClick={() => logDataButton()}>bottunnn</button>
       <ul>
-        {comments.map((comment, i) => <li key={i}>{comment.text}.....videoID: {comment.videoID}.....</li>)}
+        {comments.map((comment, i) => 
+        <li key={i}>
+          {comment.text}
+          .....videoID: {comment.videoID}
+          .....commentID: {comment._id}
+          .....likes: {comment.likes}
+          .....dislikes: {comment.dislikes}
+          <ul>
+          .....replies: {comment.replies.map((replies) => 
+          <li>{replies.text}
+          .....likes: {replies.likes}
+          .....dislikes: {replies.dislikes}
+          </li>)}
+          </ul>
+
+        </li>)}
+        
       </ul>
     </div>
   )

@@ -4,9 +4,7 @@ import { TextField, Button, Container } from '@material-ui/core'
 
 export default function NewComment() {
 
-  // const [videoID, setVideoID] = useState('')
   const [text, setText] = useState('')
-  // const [comment, setComment] = useState({})
   const postCommentApi = `http://localhost:8000/api/comments/`
 
   const rng = Math.floor(Math.random() * 1000000) + 1
