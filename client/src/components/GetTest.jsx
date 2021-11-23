@@ -7,7 +7,6 @@ export default function GetTest() {
 
   const getComments = async () => {
     await axios.get(`http://localhost:8000/api/comments`).then((response) => {
-      // console.log(comments.text)
       setComments(response.data)
     })
   }
@@ -20,12 +19,14 @@ export default function GetTest() {
     console.log(comments)
   }
 
+
+  // need to map over commentID.replies to display replies to specific comment
   return (
     <div>
       <button onClick={() => logDataButton()}>bottunnn</button>
-      <ol>
-        {comments.map((comment) => <li key={comment}>{comment.text}</li>)}
-      </ol>
+      <ul>
+        {comments.map((comment, i) => <li key={i}>{comment.text}.....videoID: {comment.videoID}.....</li>)}
+      </ul>
     </div>
   )
 }

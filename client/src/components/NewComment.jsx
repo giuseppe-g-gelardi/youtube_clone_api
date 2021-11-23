@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import { TextField, Button, Container } from '@material-ui/core'
 
 export default function NewComment() {
 
@@ -8,17 +9,18 @@ export default function NewComment() {
   // const [comment, setComment] = useState({})
   const postCommentApi = `http://localhost:8000/api/comments/`
 
-  // const rng = Math.floor(Math.random() * 1000000) + 1
-  // const videoidString = rng.toString()
+  const rng = Math.floor(Math.random() * 1000000) + 1
+  const videoidString = rng.toString()
 
   const handleSubmit = async e => {
     // e.preventDefault()
     let comment = {
-      videoID: "videoid",
+      videoID: videoidString,
       text
     }
     try {
       await axios.post(postCommentApi, comment)
+      console.log(videoidString)
     } catch (error) {
       console.log(error)
     }
@@ -26,11 +28,26 @@ export default function NewComment() {
 
   return (
     <div>
+      <Container>
+
       <form onSubmit={() => {handleSubmit()}}>
-        <input onChange={e => setText(e.target.value)} label='comment...' />
-          enter comment here
-        <button type='submit'>submit comment</button>
+          <TextField 
+            onChange={e => setText(e.target.value)}
+            variant='outlined'
+            multiline
+            rows={4}
+          />
+          <Button 
+            type='submit'
+            color='primary'
+            variant='contained'
+          >
+            Submit Comment
+          </Button>
       </form>
+          
+      </Container>
+   
     </div>
   )
 }
