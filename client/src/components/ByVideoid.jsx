@@ -1,21 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function ByVideoid(props) {
 
   const { comments } = props
 
-  // const [commentsByVideoid, setCommentsByVideoid ] = useState([]) 
   // const [videoid, setVideoid] = useState('')
 
-  const logger = () => {
+   const logger = () => {
     console.log(comments)
   }
 
-
-
   return (
     <div>
-      <h1>hey</h1>
+      <h1>ByVideoid</h1>
       <button onClick={() => logger()}>comments log</button>
          
       {/* this block gets comments based off videoID */}

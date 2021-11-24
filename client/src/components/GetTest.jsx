@@ -49,8 +49,6 @@ export default function GetTest() {
 
       <ByVideoid
         comments={comments}
-        setComments={setComments}
-        getComments={getComments}
       />
       
     </div>

@@ -10,8 +10,7 @@ export default function NewComment() {
   const rng = Math.floor(Math.random() * 1000000) + 1
   const videoidString = rng.toString()
 
-  const handleSubmit = async e => {
-    // e.preventDefault()
+  const handleSubmit = async () => {
     let comment = {
       videoID: videoidString,
       text
