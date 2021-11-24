@@ -1,19 +1,16 @@
 import React from 'react'
+import { IconButton } from '@material-ui/core'
+import { DeleteOutline } from '@material-ui/icons'
 
 export default function ByVideoid(props) {
 
-  const { comments } = props
-
-  // const [videoid, setVideoid] = useState('')
-
-   const logger = () => {
-    console.log(comments)
-  }
+  const { comments, handleDelete } = props
 
   return (
     <div>
+
+      {/* <button onClick={() => console.log(comments)}>log comments</button> */}
       <h1>ByVideoid</h1>
-      <button onClick={() => logger()}>comments log</button>
          
       {/* this block gets comments based off videoID */}
       {/* need to create state so ID isnt hard coded */}
@@ -23,6 +20,9 @@ export default function ByVideoid(props) {
             return (
           <li key={i}>
             {comment.text}
+            <IconButton onClick={() => handleDelete(comment._id)}>
+             <DeleteOutline style={{color: '#f07178'}}/>
+            </IconButton>
           </li>
           )
         }

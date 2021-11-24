@@ -7,26 +7,21 @@ export default function NewComment() {
   const [text, setText] = useState('')
   const postCommentApi = `http://localhost:8000/api/comments/`
 
-  const rng = Math.floor(Math.random() * 1000000) + 1
-  const videoidString = rng.toString()
 
   const handleSubmit = async () => {
     let comment = {
-      videoID: videoidString,
+      videoID: '1',
       text
     }
     try {
       await axios.post(postCommentApi, comment)
-      console.log(videoidString)
     } catch (error) {
       console.log(error)
     }
   }
 
   return (
-    <div>
-      <Container>
-
+    <Container>
       <form onSubmit={() => {handleSubmit()}}>
           <TextField 
             onChange={e => setText(e.target.value)}
@@ -42,10 +37,10 @@ export default function NewComment() {
             Submit Comment
           </Button>
       </form>
+
+     
           
-      </Container>
-   
-    </div>
+    </Container>
   )
 }
 
