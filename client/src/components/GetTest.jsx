@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import ByVideoid from './ByVideoid'
 
 export default function GetTest() {
 
@@ -19,7 +20,6 @@ export default function GetTest() {
     console.log(comments)
   }
 
-  // TODO map over commentID.replies to display replies to specific comment
   return (
     <div>
       <button onClick={() => logDataButton()}>bottunnn</button>
@@ -32,11 +32,10 @@ export default function GetTest() {
           .....likes: {comment.likes}
           .....dislikes: {comment.dislikes}
           {comment.replies
+          // eslint-disable-next-line array-callback-return
           .filter(reply => {
-            if (reply) {
-              return reply
-            } })
-            .map((replies, i) => { 
+            if (reply) return reply 
+          }).map((replies, i) => { 
             return (
             <li key={i} component='div'>
               .....replies: {replies.text}
@@ -46,6 +45,14 @@ export default function GetTest() {
         </li>
         )}
       </ul>
+
+
+      <ByVideoid
+        comments={comments}
+        setComments={setComments}
+        getComments={getComments}
+      />
+      
     </div>
   )
 }
