@@ -19,29 +19,32 @@ export default function GetTest() {
     console.log(comments)
   }
 
-
-  // need to map over commentID.replies to display replies to specific comment
+  // TODO map over commentID.replies to display replies to specific comment
   return (
     <div>
       <button onClick={() => logDataButton()}>bottunnn</button>
       <ul>
         {comments.map((comment, i) => 
         <li key={i}>
-          {comment.text}
+          .....comment: {comment.text}
           .....videoID: {comment.videoID}
           .....commentID: {comment._id}
           .....likes: {comment.likes}
           .....dislikes: {comment.dislikes}
-          <ul>
-          .....replies: {comment.replies.map((replies) => 
-          <li>{replies.text}
-          .....likes: {replies.likes}
-          .....dislikes: {replies.dislikes}
-          </li>)}
-          </ul>
-
-        </li>)}
-        
+          {comment.replies
+          .filter(reply => {
+            if (reply) {
+              return reply
+            } })
+            .map((replies, i) => { 
+            return (
+            <li key={i} component='div'>
+              .....replies: {replies.text}
+            </li>
+            )
+          })}
+        </li>
+        )}
       </ul>
     </div>
   )
