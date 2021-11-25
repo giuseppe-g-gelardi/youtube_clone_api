@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Popup(props) {
 
-  const { title, children, openPopup, setOpenPopup } = props
+  const { children, openPopup, setOpenPopup, text } = props
   const classes = useStyles()
 
   return (
@@ -27,7 +27,7 @@ export default function Popup(props) {
       <DialogTitle className={classes.DialogTitle}>
         <div style={{display: 'flex'}}>
           <Typography variant='h6' component='div' className={classes.text} style={{flexGrow: 1}}>
-            {title}
+            {text}
           </Typography>
           <Controls.ActionButton
             color='secondary'

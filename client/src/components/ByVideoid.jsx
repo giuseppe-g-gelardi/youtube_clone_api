@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconButton } from '@material-ui/core'
+import { IconButton, Card } from '@material-ui/core'
 import { DeleteOutline } from '@material-ui/icons'
 import QuickreplyOutlinedIcon from '@mui/icons-material/QuickreplyOutlined';
 
@@ -29,6 +29,8 @@ export default function ByVideoid(props) {
              if (reply) return reply 
            }).map((replies, i) => { 
              return (
+
+              
              <li key={i} component='div'>
                .....reply: {replies.text}
                
