@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { TextField, Button, Container } from '@material-ui/core'
 
-export default function NewComment() {
+// import NewReply from './NewReply'
+
+export default function NewReply() {
 
   const [text, setText] = useState('')
   const [videoID, setVideoID] = useState('')
   const postCommentApi = `http://localhost:8000/api/comments/`
 
 
-  const postNewReply = async () => {
+  const postNewComment = async () => {
     setVideoID('1')
     let comment = {
       videoID: '1',
@@ -24,7 +26,7 @@ export default function NewComment() {
 
   return (
     <Container>
-      <form onSubmit={() => {postNewReply()}}>
+      <form onSubmit={() => {postNewComment()}}>
           <TextField 
             onChange={e => setText(e.target.value)}
             variant='outlined'
@@ -36,11 +38,9 @@ export default function NewComment() {
             color='primary'
             variant='contained'
           >
-            Submit Comment
+            Submit Reply
           </Button>
       </form>
-
     </Container>
   )
 }
-

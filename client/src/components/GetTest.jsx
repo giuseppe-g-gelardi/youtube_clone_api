@@ -5,6 +5,7 @@ import ByVideoid from './ByVideoid'
 export default function GetTest() {
 
   const [comments, setComments] = useState([])
+  const [replies, setReplies] = useState([])
 
   const getComments = async () => {
     await axios.get(`http://localhost:8000/api/comments`).then((response) => {
@@ -16,10 +17,6 @@ export default function GetTest() {
     getComments()
   }, [comments])
 
-  // const logDataButton = () => {
-  //   console.log(comments)
-  // }
-
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8000/api/comments/${id}`)
@@ -29,18 +26,30 @@ export default function GetTest() {
     }
   }
 
+  // const getReplies = async (id) => {
+  //   try {
+  //     await axios.get(`http://localhost:8000/api/comments/${id}/replies`).then((response) => {
+  //       setReplies(response.data)
+  //       console.log(replies)
+  //     })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
   return (
     <>
        <ByVideoid
         comments={comments}
         handleDelete={handleDelete}
+        // replies={replies}
       />
     </>
   )
 }
 
 
-    // <button onClick={() => logDataButton()}>bottunnn</button>
+    // <button onClick={() => console.log(comments)}>bottunnn</button>
     //   <ul>
     //     {comments.map((comment, i) => 
     //     <li key={i} >
