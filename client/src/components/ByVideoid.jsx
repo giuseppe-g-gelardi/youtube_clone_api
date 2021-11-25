@@ -41,7 +41,6 @@ export default function ByVideoid(props) {
 
   return (
     <Container style={{ marginTop: '20px' }} elevation={20}>
-      {/* <h1>ByVideoid</h1> */}
       <ul>
         {comments.map((comment, i) => {
           if (comment.videoID === '1') {
@@ -51,8 +50,6 @@ export default function ByVideoid(props) {
 
                 <Typography>
                   {comment.text}
-                  
-                  {/* {comment._id} */}
                   <IconButton onClick={() => handleDelete(comment._id)}>
                     <DeleteOutline style={{ color: '#f07178' }} />
                   </IconButton>
@@ -94,16 +91,21 @@ export default function ByVideoid(props) {
         })}
       </ul>
 
+
+
+
       <Popup
         text="Reply to comment"
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
-        
       >
         <NewReply 
           currentCommentID={currentCommentID}
         />
       </Popup>
+
+
+
     </Container>
   )
 }
