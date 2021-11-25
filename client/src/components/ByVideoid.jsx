@@ -8,6 +8,11 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
+
+import Popup from '../components/Popup'
+import NewReply from '../components/NewReply'
+
+
 const ExpandMore = styled(props => {
   const { expand, ...other } = props
   return <IconButton {...other} />
@@ -25,25 +30,36 @@ export default function ByVideoid(props) {
 
   const [expanded, setExpanded] = useState(false)
 
+  const [openPopup, setOpenPopup] = useState(false)
+
+  const [ currentCommentID, setCurrentCommentID ] = useState('')
+
+
   const handleExpandClick = () => {
     setExpanded(!expanded)
   }
 
   return (
     <Container style={{ marginTop: '20px' }} elevation={20}>
-      <h1>ByVideoid</h1>
+      {/* <h1>ByVideoid</h1> */}
       <ul>
         {comments.map((comment, i) => {
           if (comment.videoID === '1') {
+
             return (
               <Card key={i}>
+
                 <Typography>
                   {comment.text}
+                  
                   {/* {comment._id} */}
                   <IconButton onClick={() => handleDelete(comment._id)}>
                     <DeleteOutline style={{ color: '#f07178' }} />
                   </IconButton>
-                  <IconButton>
+                  <IconButton onClick={() => {
+                      setOpenPopup(true);
+                      setCurrentCommentID(comment._id);
+                  }}>
                     <QuickreplyOutlinedIcon color='primary' />
                   </IconButton>
                 </Typography>
@@ -77,6 +93,17 @@ export default function ByVideoid(props) {
           return null;
         })}
       </ul>
+
+      <Popup
+        text="Reply to comment"
+        openPopup={openPopup}
+        setOpenPopup={setOpenPopup}
+        
+      >
+        <NewReply 
+          currentCommentID={currentCommentID}
+        />
+      </Popup>
     </Container>
   )
 }

@@ -13,14 +13,16 @@ export default function Home() {
   return (
     <Container>
 
-      <GetTest />
-
       <IconButton onClick={() => setOpenPopup(true)}>
         <Button style={{color: '#89ddff'}}>
           New Comment
         </Button>
       </IconButton>
 
+
+      <GetTest />
+
+      
       <Popup
         text="New Comment..."
         openPopup={openPopup}
