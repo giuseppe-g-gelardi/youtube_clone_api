@@ -8,8 +8,6 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-
-
 const ExpandMore = styled(props => {
   const { expand, ...other } = props
   return <IconButton {...other} />
@@ -21,7 +19,6 @@ const ExpandMore = styled(props => {
   })
 }))
 
-
 export default function ByVideoid(props) {
 
   const { comments, handleDelete } = props
@@ -32,8 +29,6 @@ export default function ByVideoid(props) {
     setExpanded(!expanded)
   }
 
-
-
   return (
     <Container style={{ marginTop: '20px' }} elevation={20}>
       <h1>ByVideoid</h1>
@@ -41,61 +36,47 @@ export default function ByVideoid(props) {
         {comments.map((comment, i) => {
           if (comment.videoID === '1') {
             return (
-            <Card>
-
-            <Typography>
-              {comment.text}
-              {comment._id}
-
-              <IconButton onClick={() => handleDelete(comment._id)}>
-              <DeleteOutline style={{color: '#f07178'}}/>
-            </IconButton>
-            <IconButton>
-              <QuickreplyOutlinedIcon />
-            </IconButton>
-
-
-            </Typography>
-           
-
-
-            
-
-            
-
-
-            {comment.replies
-           // eslint-disable-next-line array-callback-return
-           .filter(reply => {
-             if (reply) return reply 
-           }).map((replies, i) => { 
-             return (
-              <>
-              <ExpandMore
-              expand={expanded}
-              onClick={handleExpandClick}
-              >
-              <ExpandMoreIcon />
-              </ExpandMore>
-              <Collapse in={expanded} timeout='auto' unmountOnExit>
-
               <Card key={i}>
-                .....reply: {replies.text}
+                <Typography>
+                  {comment.text}
+                  {/* {comment._id} */}
+                  <IconButton onClick={() => handleDelete(comment._id)}>
+                    <DeleteOutline style={{ color: '#f07178' }} />
+                  </IconButton>
+                  <IconButton>
+                    <QuickreplyOutlinedIcon color='primary' />
+                  </IconButton>
+                </Typography>
+                {comment.replies
+                  // eslint-disable-next-line array-callback-return
+                  .filter(reply => {
+                    if (reply) return reply
+                  }).map((replies, i) => {
+                    return (
+                      <>
+                        <Typography>
+                          See Replies
+                        </Typography>
+                        <ExpandMore
+                          expand={expanded}
+                          onClick={handleExpandClick}
+                        >
+                          <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse in={expanded} timeout='auto' unmountOnExit>
+                          <CardContent>
+                            <Card key={i}>
+                              {replies.text}
+                            </Card>
+                          </CardContent>
+                        </Collapse>
+                      </>
+                    )})}
               </Card>
-
-
-              
-            </Collapse>
-
-              </>
-             )
-           })}
-          </Card>
-
-          )
-        }
+            )}
+          return null;
         })}
       </ul>
-      </Container>
+    </Container>
   )
 }

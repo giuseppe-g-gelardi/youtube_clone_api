@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import { ButtonGroup, IconButton, Typography, Button } from '@material-ui/core'
+import { IconButton, Button, Container } from '@material-ui/core'
 
 import GetTest from '../components/GetTest'
 
@@ -13,7 +11,8 @@ export default function Home() {
   const [openPopup, setOpenPopup] = useState(false)
 
   return (
-    <div>
+    <Container>
+
       <GetTest />
 
       <IconButton onClick={() => setOpenPopup(true)}>
@@ -22,7 +21,6 @@ export default function Home() {
         </Button>
       </IconButton>
 
-
       <Popup
         text="New Comment..."
         openPopup={openPopup}
@@ -30,6 +28,6 @@ export default function Home() {
       >
         <NewComment />
       </Popup>
-    </div>
+    </Container>
   )
 }

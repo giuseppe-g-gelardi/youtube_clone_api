@@ -7,12 +7,18 @@ import { TextField, Button, Container } from '@material-ui/core'
 export default function NewReply() {
 
   const [text, setText] = useState('')
-  const [videoID, setVideoID] = useState('')
+  // const [videoID, setVideoID] = useState('')
+  // const [  commentID, setCommentID ] = useState('')
   const postCommentApi = `http://localhost:8000/api/comments/`
 
 
+
+  // reply link
+  // http://localhost:8000/api/comments/619ecffbecdde10dac147d41/replies
+  // http://localhost:8000/api/comments/_.id/replies
+
+
   const postNewComment = async () => {
-    setVideoID('1')
     let comment = {
       videoID: '1',
       text
