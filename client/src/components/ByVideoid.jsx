@@ -10,7 +10,7 @@ import { styled } from '@mui/material/styles'
 
 
 import Popup from '../components/Popup'
-import NewReply from '../components/NewReply'
+import NewReplyForm from './forms/NewReplyForm'
 
 
 const ExpandMore = styled(props => {
@@ -42,7 +42,7 @@ export default function ByVideoid(props) {
   return (
     <Container style={{ marginTop: '20px' }} elevation={20}>
       <ul>
-        {comments.map((comment, i) => {
+        {comments.reverse().map((comment, i) => {
           if (comment.videoID === '1') {
 
             return (
@@ -60,6 +60,8 @@ export default function ByVideoid(props) {
                     <QuickreplyOutlinedIcon color='primary' />
                   </IconButton>
                 </Typography>
+
+
                 {comment.replies
                   // eslint-disable-next-line array-callback-return
                   .filter(reply => {
@@ -99,7 +101,7 @@ export default function ByVideoid(props) {
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
       >
-        <NewReply 
+        <NewReplyForm 
           currentCommentID={currentCommentID}
         />
       </Popup>
