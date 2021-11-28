@@ -8,8 +8,8 @@ import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
-
-import Popup from '../components/Popup'
+import Controls from '../components/controls/Controls'
+// import Popup from '../components/Popup'
 import NewReplyForm from './forms/NewReplyForm'
 
 
@@ -96,7 +96,7 @@ export default function ByVideoid(props) {
 
 
 
-      <Popup
+      <Controls.Popup
         text="Reply to comment"
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
@@ -104,7 +104,7 @@ export default function ByVideoid(props) {
         <NewReplyForm 
           currentCommentID={currentCommentID}
         />
-      </Popup>
+      </Controls.Popup>
 
 
 

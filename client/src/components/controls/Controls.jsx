@@ -1,10 +1,12 @@
 
 import ActionButton from "./ActionButton";
 import MuiSwitch from "./MuiSwitch";
+import Popup from "./Popup"
 
 const Controls = {
   ActionButton,
-  MuiSwitch
+  MuiSwitch,
+  Popup
 }
 
 export default Controls

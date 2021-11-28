@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dialog, DialogTitle, DialogContent, makeStyles, Typography } from '@material-ui/core'
-import Controls from './controls/Controls'
+import Controls from './Controls'
 import { Close } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({

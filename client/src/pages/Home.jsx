@@ -4,7 +4,8 @@ import { IconButton, Button, Container } from '@material-ui/core'
 import GetTest from '../components/GetTest'
 
 import NewComment from '../components/forms/NewCommentForm'
-import Popup from '../components/Popup'
+// import Popup from '../components/Popup'
+import Controls from '../components/controls/Controls'
 
 export default function Home() {
 
@@ -23,13 +24,13 @@ export default function Home() {
       <GetTest />
 
       
-      <Popup
+      <Controls.Popup
         text="New Comment..."
         openPopup={openPopup}
         setOpenPopup={setOpenPopup}
       >
         <NewComment />
-      </Popup>
+      </Controls.Popup>
     </Container>
   )
 }
