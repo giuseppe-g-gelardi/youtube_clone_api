@@ -15,7 +15,6 @@ const lightTheme = createTheme({
   palette: {
     type: 'light'
   },  
-  
 })
 
 const darkTheme = createTheme({
