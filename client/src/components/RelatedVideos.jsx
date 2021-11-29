@@ -1,20 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 export default function RelatedVideos(props) {
 
-  const [related, setRelated] = useState([])
-
   const { relatedVideos } = props
-
-  const getRelatedId = () => {
-    relatedVideos.map((videos) => {
-        setRelated(videos.id.videoId)
-    })
-  }
-
-  useEffect(() => {
-    getRelatedId()
-  })
   
   return (
     <div>
@@ -24,7 +12,6 @@ export default function RelatedVideos(props) {
       {relatedVideos.map((videos) => {
         return (
           <>
-          
           <ul>
             <iframe 
               title='relatedvids'
@@ -33,8 +20,6 @@ export default function RelatedVideos(props) {
               src={`https://www.youtube.com/embed/${videos.id.videoId}?autoplay=0&origin=http://example.com`}
               frameBorder='0'
             />
-
-            
           </ul>
           </>
         )
