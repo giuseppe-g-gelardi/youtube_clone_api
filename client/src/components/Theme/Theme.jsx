@@ -22,14 +22,6 @@ const darkTheme = createTheme({
   palette: {
     type: 'dark'
   },
-  components: {
-    MuiTextField: {
-      color: '#fff',
-      inputLabelProps: {
-        color: '#fff'
-      }
-    }, 
-  }
 })
 
 export { lightTheme, darkTheme }
