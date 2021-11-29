@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { TextField, Button, Container } from '@material-ui/core'
+import { TextField, Button, Container, FormControl } from '@material-ui/core'
 
 export default function NewReplyForm(props) {
 
@@ -23,7 +23,7 @@ export default function NewReplyForm(props) {
 
   return (
     <Container>
-      <form onSubmit={() => {postNewReply()}}>
+      <FormControl onSubmit={() => {postNewReply()}}>
           <TextField 
             onChange={e => setText(e.target.value)}
             variant='outlined'
@@ -37,7 +37,7 @@ export default function NewReplyForm(props) {
           >
             Submit Reply
           </Button>
-      </form>
+      </FormControl>
     </Container>
   )
 }

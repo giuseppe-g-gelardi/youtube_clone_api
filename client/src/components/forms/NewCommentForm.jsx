@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { TextField, Button, Container } from '@material-ui/core'
+import { TextField, Button, Container, FormControl } from '@material-ui/core'
 
 export default function NewCommentForm() {
 
@@ -13,7 +13,7 @@ export default function NewCommentForm() {
     setVideoID(tempVideoID)
   }, [])
 
-  const postNewReply = async () => {
+  const postNewComment = async () => {
     let comment = {
       videoID: videoID,
       text
@@ -27,6 +27,27 @@ export default function NewCommentForm() {
 
   return (
     <Container>
+      <FormControl onSubmit={() => {postNewComment()}}>
+          <TextField 
+            onChange={e => setText(e.target.value)}
+            variant='outlined'
+            multiline
+            rows={2}
+          />
+          <Button 
+            type='submit'
+            color='primary'
+            variant='contained'
+          >
+            Submit Comment
+          </Button>
+      </FormControl>
+
+    </Container>
+  )
+}
+
+{/* <Container>
       <form onSubmit={() => {postNewReply()}}>
           <TextField 
             onChange={e => setText(e.target.value)}
@@ -43,6 +64,4 @@ export default function NewCommentForm() {
           </Button>
       </form>
 
-    </Container>
-  )
-}
+    </Container> */}
