@@ -23,7 +23,7 @@ const ExpandMore = styled(props => {
   })
 }))
 
-export default function ByVideoid(props) {
+export default function DisplayComments(props) {
 
   const { comments, replies, handleDelete } = props
 

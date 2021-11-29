@@ -13,7 +13,6 @@ export default function NewCommentForm() {
     setVideoID(tempVideoID)
   }, [])
 
-
   const postNewReply = async () => {
     let comment = {
       videoID: videoID,

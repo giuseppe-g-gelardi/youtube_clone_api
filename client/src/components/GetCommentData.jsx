@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import ByVideoid from './ByVideoid'
+import DisplayComments from './DisplayComments'
 
 import key from '../key'
 import VideoPlayer from './VideoPlayer'
 import RelatedVideos from './RelatedVideos'
 
 export default function GetCommentData() {
+
 
   // video search url
   // https://www.googleapis.com/youtube/v3/search?q=${userInput}&key=${key}&maxResults=10&order=viewCount&part=snippet
@@ -95,7 +96,7 @@ export default function GetCommentData() {
       />
 
 
-      <ByVideoid
+      <DisplayComments
         comments={comments}
         handleDelete={handleDelete}
         replies={replies}
