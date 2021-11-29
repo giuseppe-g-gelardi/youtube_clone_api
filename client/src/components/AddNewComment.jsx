@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { IconButton, Button, Container } from '@material-ui/core'
 
 import Controls from '../components/controls/Controls'
-import GetCommentData from '../components/GetCommentData'
 import NewCommentForm from '../components/forms/NewCommentForm'
 
 export default function AddNewComment() {
@@ -17,8 +16,6 @@ export default function AddNewComment() {
           New Comment
         </Button>
       </IconButton>
-
-      <GetCommentData />
 
       <Controls.Popup
         text="New Comment..."

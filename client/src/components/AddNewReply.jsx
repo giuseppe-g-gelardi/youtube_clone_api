@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { IconButton, Button, Container } from '@material-ui/core'
 import Controls from '../components/controls/Controls'
 
-import GetCommentData from '../components/GetCommentData'
 import NewReplyForm from './forms/NewReplyForm'
 
 export default function AddNewReply() {
@@ -17,7 +16,6 @@ export default function AddNewReply() {
         </Button>
       </IconButton>
 
-      <GetCommentData />
 
       <Controls.Popup
         text="Add new reply..."
@@ -30,15 +28,3 @@ export default function AddNewReply() {
     </Container>
   )
 }
- 
-      
-      
-      // <Controls.Popup
-      //   text="Reply to comment"
-      //   openPopup={openPopup}
-      //   setOpenPopup={setOpenPopup}
-      // >
-      //   <NewReplyForm 
-      //     currentCommentID={currentCommentID}
-      //   />
-      // </Controls.Popup>
