@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { TextField, Button, Container } from '@material-ui/core'
 
@@ -8,11 +8,15 @@ export default function NewComment() {
   const [videoID, setVideoID] = useState('')
   const postCommentApi = `http://localhost:8000/api/comments/`
 
+  useEffect(() => {
+    let tempVideoID = '1'
+    setVideoID(tempVideoID)
+  }, [])
+
 
   const postNewReply = async () => {
-    setVideoID('1')
     let comment = {
-      videoID: '1',
+      videoID: videoID,
       text
     }
     try {

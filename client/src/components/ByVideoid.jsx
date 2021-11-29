@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 
 import Controls from '../components/controls/Controls'
-// import Popup from '../components/Popup'
 import NewReplyForm from './forms/NewReplyForm'
 
 
@@ -26,12 +25,10 @@ const ExpandMore = styled(props => {
 
 export default function ByVideoid(props) {
 
-  const { comments, handleDelete } = props
+  const { comments, replies, handleDelete } = props
 
   const [expanded, setExpanded] = useState(false)
-
   const [openPopup, setOpenPopup] = useState(false)
-
   const [ currentCommentID, setCurrentCommentID ] = useState('')
 
 
@@ -41,6 +38,7 @@ export default function ByVideoid(props) {
 
   return (
     <Container style={{ marginTop: '20px' }} elevation={20}>
+      <button onClick={() => console.log(replies)}>log replies</button>
       <ul>
         {comments.reverse().map((comment, i) => {
           if (comment.videoID === '1') {

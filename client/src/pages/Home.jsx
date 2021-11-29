@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { IconButton, Button, Container } from '@material-ui/core'
 
-import GetTest from '../components/GetTest'
-
-import NewComment from '../components/forms/NewCommentForm'
-// import Popup from '../components/Popup'
 import Controls from '../components/controls/Controls'
+import GetCommentData from '../components/GetCommentData'
+import NewComment from '../components/forms/NewCommentForm'
 
 export default function Home() {
 
@@ -20,10 +18,8 @@ export default function Home() {
         </Button>
       </IconButton>
 
+      <GetCommentData />
 
-      <GetTest />
-
-      
       <Controls.Popup
         text="New Comment..."
         openPopup={openPopup}
