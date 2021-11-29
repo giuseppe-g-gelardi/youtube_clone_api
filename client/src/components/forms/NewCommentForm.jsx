@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { TextField, Button, Container } from '@material-ui/core'
 
-export default function NewComment() {
+export default function NewCommentForm() {
 
   const [text, setText] = useState('')
   const [videoID, setVideoID] = useState('')
