@@ -38,6 +38,7 @@ export default function NewCommentForm() {
             type='submit'
             color='primary'
             variant='contained'
+            style={{marginTop: 10}}
           >
             Submit Comment
           </Button>
@@ -46,22 +47,3 @@ export default function NewCommentForm() {
     </Container>
   )
 }
-
-{/* <Container>
-      <form onSubmit={() => {postNewReply()}}>
-          <TextField 
-            onChange={e => setText(e.target.value)}
-            variant='outlined'
-            multiline
-            rows={2}
-          />
-          <Button 
-            type='submit'
-            color='primary'
-            variant='contained'
-          >
-            Submit Comment
-          </Button>
-      </form>
-
-    </Container> */}

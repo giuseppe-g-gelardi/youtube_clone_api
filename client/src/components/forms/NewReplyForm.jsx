@@ -34,6 +34,7 @@ export default function NewReplyForm(props) {
             type='submit'
             color='primary'
             variant='contained'
+            style={{marginTop: 10}}
           >
             Submit Reply
           </Button>
