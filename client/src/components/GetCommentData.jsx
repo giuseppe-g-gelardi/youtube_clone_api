@@ -2,10 +2,21 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import ByVideoid from './ByVideoid'
 
+import key from '../key'
+import VideoPlayer from './VideoPlayer'
+import RelatedVideos from './RelatedVideos'
+
 export default function GetCommentData() {
+
+  // video search url
+  // https://www.googleapis.com/youtube/v3/search?q=${userInput}&key=${key}&maxResults=10&order=viewCount&part=snippet
+
+  // get related videos url
+  // https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${key}&part=snippet
 
   const [comments, setComments] = useState([])
   const [replies, setReplies] = useState([])
+  const [videoid, setVideoid] = useState('W0quDfpfRUQ') // Welcome to youtube - Bo burnham
 
   const hardcodecommentid = '619ecffbecdde10dac147d41'
 
@@ -41,6 +52,31 @@ export default function GetCommentData() {
     }
   }
 
+  const getVideos = async () => {
+    try {
+      await axios.get(``).then((response => {
+        //set 
+        //log
+      }))
+    } catch (error) {
+      console.log(error)
+      // make a 404/500 page or popup??
+    }
+  }
+
+  const getRelatedVideos = async () => {
+    try {
+      await axios.get(``).then((response) => {
+        // setRelatedVideos
+        // log 
+      })
+    } catch (error) {
+      console.log(error)
+      // make a 404/500 page or popup??
+    }
+  }
+
+
   useEffect(() => {
     getComments()
     // getReplies()
@@ -49,7 +85,17 @@ export default function GetCommentData() {
 
   return (
     <>
-       <ByVideoid
+
+      <VideoPlayer 
+        videoid={videoid}
+      />
+
+      <RelatedVideos 
+        
+      />
+
+
+      <ByVideoid
         comments={comments}
         handleDelete={handleDelete}
         replies={replies}

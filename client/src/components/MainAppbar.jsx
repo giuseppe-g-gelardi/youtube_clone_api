@@ -7,6 +7,7 @@ import MuiSwitch from './controls/MuiSwitch';
 import { makeStyles } from '@material-ui/core'
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
+
 import Controls from './controls/Controls'
 
 const useStyles = makeStyles((theme) => {
@@ -32,9 +33,7 @@ const useStyles = makeStyles((theme) => {
 export default function MainAppBar(props) {
 
   const { children, check, change } = props
-
   const classes = useStyles()
-
 
   function HideOnScroll(props) {
     const { children, window } = props;
@@ -55,9 +54,12 @@ export default function MainAppBar(props) {
       <HideOnScroll {...props}>
         <AppBar position="fixed" elevation={10} color='transparent'>
           <Toolbar>
-            <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+            <Typography variant="h5" component="div">
               Welcome to the Tubeee
             </Typography>
+            
+            <Controls.MuiSearchBar />
+
             <MuiSwitch onChange={change} checked={check} />
           </Toolbar>
         </AppBar>
@@ -70,3 +72,5 @@ export default function MainAppBar(props) {
     </Box>
   );
 }
+
+          

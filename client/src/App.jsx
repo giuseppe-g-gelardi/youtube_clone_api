@@ -7,8 +7,6 @@ import { lightTheme, darkTheme } from './components/Theme/Theme';
 import Home from './pages/Home'
 import MainAppBar from './components/MainAppbar';
 
-// import { API_KEY } from './API_KEY'
-
 export default function App() {
   const [darkMode, setDarkMode] = useState(false)
   const theme = (darkMode ? darkTheme : lightTheme)
