@@ -65,7 +65,7 @@ export default function MainAppBar(props) {
         </AppBar>
       </HideOnScroll>
         <div className={classes.page}>
-          <div classname={classes.toolbar}>
+          <div className={classes.toolbar}>
         </div>
           {children}
         </div>

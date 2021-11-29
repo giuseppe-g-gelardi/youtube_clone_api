@@ -30,8 +30,6 @@ export default function GetCommentData() {
     })
   }
 
-
-
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:8000/api/comments/${id}`)
@@ -42,9 +40,10 @@ export default function GetCommentData() {
     }
   }
 
-  const getReplies = async (id) => {
+  const getReplies = async () => {
     try {
-      await axios.get(`http://localhost:8000/api/comments/${hardcodecommentid}/replies`).then((response) => {
+      await axios.get(`http://localhost:8000/api/comments/${hardcodecommentid}/replies`)
+      .then((response) => {
         setReplies(response.data)
         console.log('replies:', replies)
       })
@@ -67,24 +66,24 @@ export default function GetCommentData() {
     }
   }
 
-  const getRelatedVideos = async () => {
-    try {
-      await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoid}&type=video&key=${key}&part=snippet`)
-      .then((response) => {
-        console.log(response.data.items)
-        setRelatedVideos(response.data.items)
-      })
-    } catch (error) {
-      console.log(error)
-      // make a 404/500 page or popup??
-    }
-  }
+  // const getRelatedVideos = async () => {
+  //   try {
+  //     await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoid}&type=video&key=${key}&part=snippet`)
+  //     .then((response) => {
+  //       console.log(response.data.items)
+  //       setRelatedVideos(response.data.items)
+  //     })
+  //   } catch (error) {
+  //     console.log(error)
+  //     // make a 404/500 page or popup??
+  //   }
+  // }
 
 
   useEffect(() => {
     getComments()
     // getReplies()
-    getRelatedVideos()
+    // getRelatedVideos() // burned out api key
   }, [])
   // empty array for testing, add comments to array later
 
@@ -104,6 +103,7 @@ export default function GetCommentData() {
         comments={comments}
         handleDelete={handleDelete}
         replies={replies}
+        videoid={videoid}
       />
     </>
   )

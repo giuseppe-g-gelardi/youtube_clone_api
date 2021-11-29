@@ -4,14 +4,13 @@ import { DeleteOutline } from '@material-ui/icons'
 import QuickreplyOutlinedIcon from '@mui/icons-material/QuickreplyOutlined'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
-import { styled } from '@mui/material/styles'
 
 import Controls from '../components/controls/Controls'
 import NewReplyForm from './forms/NewReplyForm'
 
 
 export default function DisplayComments (props) {
-  const { comments, replies, handleDelete } = props
+  const { comments, replies, handleDelete, videoid } = props
 
   const [openPopup, setOpenPopup] = useState(false)
   const [currentCommentID, setCurrentCommentID] = useState('')
